@@ -48,9 +48,19 @@
                         <action selector="continueButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="87h-UP-cwY"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ns-rH-vui">
-                    <rect key="frame" x="8" y="432" width="584" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ns-rH-vui">
+                    <rect key="frame" x="8" y="403" width="584" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MINI BLOG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhq-7b-ZYG">
+                    <rect key="frame" x="198" y="76" width="205" height="59"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="59" id="K9b-Ip-aCv"/>
+                        <constraint firstAttribute="width" constant="205" id="kCv-Ed-o7U"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -62,11 +72,13 @@
                 <constraint firstItem="t7N-i1-8kk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5Qi-pE-qib"/>
                 <constraint firstItem="fpf-2m-3dh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="70M-7d-E1r"/>
                 <constraint firstAttribute="bottom" secondItem="fVf-jg-Qz6" secondAttribute="bottom" constant="45" id="7Ot-mP-38H"/>
-                <constraint firstItem="7ns-rH-vui" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="432" id="8ZM-tk-PjC"/>
+                <constraint firstItem="7ns-rH-vui" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="403" id="8ZM-tk-PjC"/>
                 <constraint firstAttribute="bottom" secondItem="fpf-2m-3dh" secondAttribute="bottom" constant="83" id="8r3-UC-xrw"/>
                 <constraint firstItem="7ns-rH-vui" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BG9-xF-vUF"/>
                 <constraint firstItem="FIS-jC-Kmg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MBS-gj-eDo"/>
+                <constraint firstItem="Uhq-7b-ZYG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="76" id="MUp-7q-NKf"/>
                 <constraint firstAttribute="bottom" secondItem="FIS-jC-Kmg" secondAttribute="bottom" constant="83" id="OYl-RW-2tK"/>
+                <constraint firstItem="Uhq-7b-ZYG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nLc-Pf-NNZ"/>
                 <constraint firstItem="fVf-jg-Qz6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="p9W-j0-Emr"/>
                 <constraint firstAttribute="trailing" secondItem="7ns-rH-vui" secondAttribute="trailing" constant="8" id="syh-yn-VCN"/>
             </constraints>

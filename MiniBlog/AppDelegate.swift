@@ -125,8 +125,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         withError error: NSError!) {
             if (error == nil) {
                 // Perform any operations on signed in user here.
-//                                let userId = user.userID                  // For client-side use only!
-//                                let idToken = user.authentication.idToken // Safe to send to the server
                 let name = user.profile.name
                 addAuthorToCoreData(name)
                 
@@ -134,7 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 NSNotificationCenter.defaultCenter().postNotificationName(
                     "ToggleAuthUINotification",
                     object: nil,
-                    userInfo: ["statusText": "Signed in user: \(name)"])
+                    userInfo: ["statusText": "Signed in user: \n\(name)"])
                 // [END_EXCLUDE]
             } else {
                 print("\(error.localizedDescription)")

@@ -22,6 +22,7 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
         self.loadXibName("LoginView")
         self.loginView = (self.view as! LoginView)
         self.loginView?.delegate = self
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
@@ -45,15 +46,15 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
     }
     
     func signInButtonPressed() {
+        showProcessingView()
         GIDSignIn.sharedInstance().signIn()
     }
     
     func signOutButtonPressed() {
+        showProcessingView()
         GIDSignIn.sharedInstance().signOut()
-        // [START_EXCLUDE silent]
         self.loginView?.statusLabel.text = "Signed out."
         toggleAuthUI()
-        // [END_EXCLUDE]
     }
     
     func continueButtonPressed() {
@@ -77,8 +78,10 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
             self.loginView?.signInButton.hidden = false
             self.loginView?.signOutButton.hidden = true
             self.loginView?.continueButton.hidden = true
-            self.loginView?.statusLabel.text = "Google Sign In"
+            self.loginView?.statusLabel.text = "Please login"
         }
+        
+        hideProcessingView()
     }
     // [END toggle_auth]
     
@@ -89,6 +92,7 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
                 let userInfo:Dictionary<String,String!> =
                 notification.userInfo as! Dictionary<String,String!>
                 self.loginView?.statusLabel.text = userInfo["statusText"]
+                hideProcessingView()
             }
         }
     }
@@ -99,7 +103,7 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
     // Stop the UIActivityIndicatorView animation that was started when the user
     // pressed the Sign In button
     func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
-        self.loginView?.activityIndicatorView.stopAnimating()
+        hideProcessingView()
     }
     
     // Present a view that prompts the user to sign in with Google
@@ -112,6 +116,17 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
     func signIn(signIn: GIDSignIn!,
         dismissViewController viewController: UIViewController!) {
             self.dismissViewControllerAnimated(true, completion: nil)
+            showProcessingView()
+    }
+    
+    func showProcessingView() {
+        self.loginView?.activityIndicatorView.startAnimating()
+        self.loginView?.activityIndicatorView.hidden = false
+    }
+    
+    func hideProcessingView() {
+        self.loginView?.activityIndicatorView.stopAnimating()
+        self.loginView?.activityIndicatorView.hidden = true
     }
 }
 
