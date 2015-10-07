@@ -22,26 +22,11 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
         self.loadXibName("LoginView")
         self.loginView = (self.view as! LoginView)
         self.loginView?.delegate = self
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    func signInButtonPressed() {
-        // Initialize sign-in
-//        var configureError: NSError?
-//        GGLContext.sharedInstance().configureWithError(&configureError)
-//        assert(configureError == nil, "Error configuring Google services: \(configureError)")
-        
-//        GIDSignIn.sharedInstance().clientID = "226643800352-p8bveb0ebf5i5a72bi87ftdqib1cqfhn.apps.googleusercontent.com"
-//        GIDSignIn.sharedInstance().delegate = self
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
         // Uncomment to automatically sign in the user.
-        //GIDSignIn.sharedInstance().signInSilently()
+        GIDSignIn.sharedInstance().signInSilently()
         
         // TODO(developer) Configure the sign-in button look/feel
         // [START_EXCLUDE]
@@ -55,6 +40,26 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
         // [END_EXCLUDE]
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    func signInButtonPressed() {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func signOutButtonPressed() {
+        GIDSignIn.sharedInstance().signOut()
+        // [START_EXCLUDE silent]
+        self.loginView?.statusLabel.text = "Signed out."
+        toggleAuthUI()
+        // [END_EXCLUDE]
+    }
+    
+    func continueButtonPressed() {
+        self.performSegueWithIdentifier("loginToHomeSegue", sender: self)
+    }
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self,
             name: "ToggleAuthUINotification",
@@ -65,16 +70,14 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
     func toggleAuthUI() {
         if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
             // Signed in
-//            signInButton.hidden = true
-//            signOutButton.hidden = false
-//            disconnectButton.hidden = false
-            self.performSegueWithIdentifier("loginToHomeSegue", sender: self)
+            self.loginView?.signInButton.hidden = true
+            self.loginView?.signOutButton.hidden = false
+            self.loginView?.continueButton.hidden = false
         } else {
-//            signInButton.hidden = false
-//            signOutButton.hidden = true
-//            disconnectButton.hidden = true
-//            statusText.text = "Google Sign in\niOS Demo"
-            self.performSegueWithIdentifier("loginToHomeSegue", sender: self)
+            self.loginView?.signInButton.hidden = false
+            self.loginView?.signOutButton.hidden = true
+            self.loginView?.continueButton.hidden = true
+            self.loginView?.statusLabel.text = "Google Sign In"
         }
     }
     // [END toggle_auth]
@@ -83,11 +86,32 @@ class LoginController: BaseController, LoginViewProtocol, GIDSignInUIDelegate {
         if (notification.name == "ToggleAuthUINotification") {
             self.toggleAuthUI()
             if notification.userInfo != nil {
-//                let userInfo:Dictionary<String,String!> =
-//                notification.userInfo as! Dictionary<String,String!>
-//                self.statusText.text = userInfo["statusText"]
+                let userInfo:Dictionary<String,String!> =
+                notification.userInfo as! Dictionary<String,String!>
+                self.loginView?.statusLabel.text = userInfo["statusText"]
             }
         }
+    }
+    
+    // Implement these methods only if the GIDSignInUIDelegate is not a subclass of
+    // UIViewController.
+    
+    // Stop the UIActivityIndicatorView animation that was started when the user
+    // pressed the Sign In button
+    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+        self.loginView?.activityIndicatorView.stopAnimating()
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func signIn(signIn: GIDSignIn!,
+        presentViewController viewController: UIViewController!) {
+            self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func signIn(signIn: GIDSignIn!,
+        dismissViewController viewController: UIViewController!) {
+            self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

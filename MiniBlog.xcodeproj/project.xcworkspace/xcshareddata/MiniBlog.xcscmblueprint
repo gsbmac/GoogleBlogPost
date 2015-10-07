@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A56E8130D097E9295DE8753165A2313670B27B63",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A56E8130D097E9295DE8753165A2313670B27B63" : 0,
+    "1FBBF0686A0EECBF383B735DC932BA8E9360D86A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3E472651-1024-4BB2-8018-94F9E58FC2A1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A56E8130D097E9295DE8753165A2313670B27B63" : "MiniBlogDup\/",
+    "1FBBF0686A0EECBF383B735DC932BA8E9360D86A" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MiniBlog",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MiniBlog.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/quicktraining\/miniblogswift-bare.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1FBBF0686A0EECBF383B735DC932BA8E9360D86A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gsbmac\/GoogleBlogPost.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A56E8130D097E9295DE8753165A2313670B27B63"
+    }
+  ]
+}

@@ -14,6 +14,7 @@ class UpdateBlogController: BaseController {
     
     var updateBlogView: AddBlogView?
     var postTitle: String?
+    var postAuthor: String?
     var postContent: String?
     
     override func viewDidLoad() {
@@ -30,26 +31,6 @@ class UpdateBlogController: BaseController {
     
     // MARK: CoreData Methods
     func saveBlog(){
-        /*let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        let entity =  NSEntityDescription.entityForName("Post", inManagedObjectContext:managedContext)
-        let post:Post = Post(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        post.title = self.updateBlogView?.blogTitleTextField.text
-        post.content = self.updateBlogView?.blogPostTextView.text
-        post.date = NSDate()
-        
-        let authEntity =  NSEntityDescription.entityForName("Author", inManagedObjectContext:managedContext)
-        let auth:Author = Author(entity: authEntity!,
-            insertIntoManagedObjectContext: managedContext)
-        auth.name = readFromPlist("Default Author")
-        post.post_author = auth
-        
-        do {
-            try managedContext.save()
-            self.navigationController?.popViewControllerAnimated(true)
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }*/
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -84,15 +65,22 @@ class UpdateBlogController: BaseController {
     
     func initializeNavigationBar(){
         
-        let addBlogButtonItem = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: Selector("saveBlog"))
-        
-        self.navigationItem.rightBarButtonItem = addBlogButtonItem
+        if (self.postAuthor == SessionManager.sharedInstance.sessionName) {
+            let addBlogButtonItem = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: Selector("saveBlog"))
+            self.navigationItem.rightBarButtonItem = addBlogButtonItem
+        }
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
     
     func initializePostDetails() {
         self.updateBlogView?.blogTitleTextField.text = self.postTitle
         self.updateBlogView?.blogPostTextView.text = self.postContent
+        
+        if (self.postAuthor != SessionManager.sharedInstance.sessionName) {
+            self.updateBlogView?.blogTitleTextField.enabled = false
+            self.updateBlogView?.blogPostTextView.editable = false
+        }
     }
     
 }

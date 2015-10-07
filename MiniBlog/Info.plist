@@ -32,6 +32,14 @@
 				<string>com.seer.ph.MiniBlog</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.544148487074-ntabqjtdcpmqronimqqn2bojc7k7fgjn</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>

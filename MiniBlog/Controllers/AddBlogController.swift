@@ -39,7 +39,7 @@ class AddBlogController: BaseController{
         let authEntity =  NSEntityDescription.entityForName("Author", inManagedObjectContext:managedContext)
         let auth:Author = Author(entity: authEntity!,
             insertIntoManagedObjectContext: managedContext)
-        auth.name = readFromPlist("Default Author")
+        auth.name = SessionManager.sharedInstance.sessionName
         post.post_author = auth
         
         do {
@@ -55,8 +55,8 @@ class AddBlogController: BaseController{
     func initializeNavigationBar(){
         
         let addBlogButtonItem = UIBarButtonItem(title: "Post", style: .Plain, target: self, action: Selector("postBlog"))
-        
         self.navigationItem.rightBarButtonItem = addBlogButtonItem
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
     

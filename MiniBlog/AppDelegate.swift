@@ -18,10 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        var configureError: NSError?
-//        GGLContext.sharedInstance().configureWithError(&configureError)
-//        assert(configureError == nil, "Error configuring Google services: \(configureError)")
-//        GIDSignIn.sharedInstance().clientID = "226643800352-p8bveb0ebf5i5a72bi87ftdqib1cqfhn.apps.googleusercontent.com"
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
         GIDSignIn.sharedInstance().delegate = self
         return true
     }
@@ -126,15 +125,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         withError error: NSError!) {
             if (error == nil) {
                 // Perform any operations on signed in user here.
-                //                let userId = user.userID                  // For client-side use only!
-                //                let idToken = user.authentication.idToken // Safe to send to the server
+//                                let userId = user.userID                  // For client-side use only!
+//                                let idToken = user.authentication.idToken // Safe to send to the server
                 let name = user.profile.name
-                //                let email = user.profile.email
+                addAuthorToCoreData(name)
+                
                 // [START_EXCLUDE]
                 NSNotificationCenter.defaultCenter().postNotificationName(
                     "ToggleAuthUINotification",
                     object: nil,
-                    userInfo: ["statusText": "Signed in user:\n\(name)"])
+                    userInfo: ["statusText": "Signed in user: \(name)"])
                 // [END_EXCLUDE]
             } else {
                 print("\(error.localizedDescription)")
@@ -158,6 +158,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // [END_EXCLUDE]
     }
     // [END disconnect_handler]
+    
+    func addAuthorToCoreData(name: String){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let entity =  NSEntityDescription.entityForName("Author", inManagedObjectContext:managedContext)
+        let author:Author = Author(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        author.name = name
+        
+        do {
+            try managedContext.save()
+            SessionManager.sharedInstance.sessionName = name
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
 
 }
 

@@ -11,10 +11,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-2m-3dh">
-                    <rect key="frame" x="122" y="463" width="356" height="70"/>
+                    <rect key="frame" x="158" y="461" width="284" height="56"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="YNV-rb-8oa"/>
-                        <constraint firstAttribute="width" constant="356" id="sKQ-Zu-hMo"/>
+                        <constraint firstAttribute="height" constant="56" id="YNV-rb-8oa"/>
+                        <constraint firstAttribute="width" constant="284" id="sKQ-Zu-hMo"/>
                     </constraints>
                     <state key="normal" image="google">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -23,18 +23,64 @@
                         <action selector="signInButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="7uC-4u-hdX"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t7N-i1-8kk">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIS-jC-Kmg">
+                    <rect key="frame" x="240" y="461" width="120" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="D49-ge-d7h"/>
+                        <constraint firstAttribute="height" constant="56" id="Pz8-ec-sw8"/>
+                    </constraints>
+                    <state key="normal" image="signout"/>
+                    <connections>
+                        <action selector="signOutButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="5H4-hu-aj4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVf-jg-Qz6">
+                    <rect key="frame" x="253" y="525" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="PH0-BR-Id1"/>
+                        <constraint firstAttribute="width" constant="95" id="tH1-JD-4am"/>
+                    </constraints>
+                    <state key="normal" title="Continue"/>
+                    <connections>
+                        <action selector="continueButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="87h-UP-cwY"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ns-rH-vui">
+                    <rect key="frame" x="8" y="432" width="584" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="7ns-rH-vui" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="2c5-JN-9JL"/>
+                <constraint firstItem="t7N-i1-8kk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3x1-s2-3Fa"/>
+                <constraint firstItem="t7N-i1-8kk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5Qi-pE-qib"/>
                 <constraint firstItem="fpf-2m-3dh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="70M-7d-E1r"/>
-                <constraint firstAttribute="bottom" secondItem="fpf-2m-3dh" secondAttribute="bottom" constant="67" id="8r3-UC-xrw"/>
+                <constraint firstAttribute="bottom" secondItem="fVf-jg-Qz6" secondAttribute="bottom" constant="45" id="7Ot-mP-38H"/>
+                <constraint firstItem="7ns-rH-vui" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="432" id="8ZM-tk-PjC"/>
+                <constraint firstAttribute="bottom" secondItem="fpf-2m-3dh" secondAttribute="bottom" constant="83" id="8r3-UC-xrw"/>
+                <constraint firstItem="7ns-rH-vui" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BG9-xF-vUF"/>
+                <constraint firstItem="FIS-jC-Kmg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MBS-gj-eDo"/>
+                <constraint firstAttribute="bottom" secondItem="FIS-jC-Kmg" secondAttribute="bottom" constant="83" id="OYl-RW-2tK"/>
+                <constraint firstItem="fVf-jg-Qz6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="p9W-j0-Emr"/>
+                <constraint firstAttribute="trailing" secondItem="7ns-rH-vui" secondAttribute="trailing" constant="8" id="syh-yn-VCN"/>
             </constraints>
             <connections>
+                <outlet property="activityIndicatorView" destination="t7N-i1-8kk" id="mhf-4V-aHn"/>
+                <outlet property="continueButton" destination="fVf-jg-Qz6" id="hI9-zq-ccy"/>
                 <outlet property="signInButton" destination="fpf-2m-3dh" id="kBp-7P-B77"/>
+                <outlet property="signOutButton" destination="FIS-jC-Kmg" id="ovS-OS-yKo"/>
+                <outlet property="statusLabel" destination="7ns-rH-vui" id="rUG-L1-AuU"/>
             </connections>
         </view>
     </objects>
     <resources>
         <image name="google" width="492" height="108"/>
+        <image name="signout" width="315" height="147"/>
     </resources>
 </document>

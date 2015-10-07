@@ -15,13 +15,10 @@
 		040C2FA21BC3A634004BB796 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C2FA11BC3A634004BB796 /* LoginView.xib */; settings = {ASSET_TAGS = (); }; };
 		040C2FAA1BC3AB04004BB796 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C2FA91BC3AB04004BB796 /* LoginView.swift */; settings = {ASSET_TAGS = (); }; };
 		040C2FAC1BC3AC99004BB796 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C2FAB1BC3AC99004BB796 /* LoginController.swift */; settings = {ASSET_TAGS = (); }; };
-		040C2FB41BC3AF6C004BB796 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C2FB31BC3AF6C004BB796 /* GoogleSignIn.framework */; };
-		040C2FBC1BC3B6EC004BB796 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C2FBB1BC3B6EC004BB796 /* AddressBook.framework */; };
-		040C2FBE1BC3B6F3004BB796 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C2FBD1BC3B6F3004BB796 /* StoreKit.framework */; };
-		040C2FC01BC3B988004BB796 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C2FBF1BC3B988004BB796 /* SystemConfiguration.framework */; };
-		040C2FC21BC3B9C1004BB796 /* GoogleSignIn.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C2FC11BC3B9C1004BB796 /* GoogleSignIn.bundle */; };
-		040C2FC41BC3BAC0004BB796 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C2FC31BC3BAC0004BB796 /* SafariServices.framework */; };
 		040C2FC61BC3C2BD004BB796 /* UpdateBlogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C2FC51BC3C2BD004BB796 /* UpdateBlogController.swift */; settings = {ASSET_TAGS = (); }; };
+		04F8CC361BC4B75A000D7E49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04F8CC351BC4B75A000D7E49 /* GoogleService-Info.plist */; settings = {ASSET_TAGS = (); }; };
+		04F8CC381BC4CD20000D7E49 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8CC371BC4CD20000D7E49 /* SessionManager.swift */; settings = {ASSET_TAGS = (); }; };
+		41877EAB26A9776DDAFF0341 /* Pods_MiniBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC264E256491B69E83DCF51E /* Pods_MiniBlog.framework */; };
 		92C1C69A1BC2F22F005E822F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C1C6991BC2F22F005E822F /* AppDelegate.swift */; };
 		92C1C69F1BC2F22F005E822F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C1C69D1BC2F22F005E822F /* Main.storyboard */; };
 		92C1C6A21BC2F22F005E822F /* MiniBlog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92C1C6A01BC2F22F005E822F /* MiniBlog.xcdatamodeld */; };
@@ -48,14 +45,12 @@
 		040C2FA11BC3A634004BB796 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginView.xib; path = Xibs/LoginView.xib; sourceTree = "<group>"; };
 		040C2FA91BC3AB04004BB796 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Views/LoginView.swift; sourceTree = "<group>"; };
 		040C2FAB1BC3AC99004BB796 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controllers/LoginController.swift; sourceTree = "<group>"; };
-		040C2FB31BC3AF6C004BB796 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		040C2FBA1BC3B4E5004BB796 /* MiniBlog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiniBlog-Bridging-Header.h"; sourceTree = "<group>"; };
-		040C2FBB1BC3B6EC004BB796 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		040C2FBD1BC3B6F3004BB796 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		040C2FBF1BC3B988004BB796 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		040C2FC11BC3B9C1004BB796 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
-		040C2FC31BC3BAC0004BB796 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		040C2FC51BC3C2BD004BB796 /* UpdateBlogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateBlogController.swift; path = Controllers/UpdateBlogController.swift; sourceTree = "<group>"; };
+		04F8CC351BC4B75A000D7E49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04F8CC371BC4CD20000D7E49 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Util/SessionManager.swift; sourceTree = "<group>"; };
+		47D64ACBB32BEF36F31C90F0 /* Pods-MiniBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniBlog.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniBlog/Pods-MiniBlog.release.xcconfig"; sourceTree = "<group>"; };
+		5C28707E2D0D3B3575A66C57 /* Pods-MiniBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniBlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniBlog/Pods-MiniBlog.debug.xcconfig"; sourceTree = "<group>"; };
 		92C1C6961BC2F22F005E822F /* MiniBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C1C6991BC2F22F005E822F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C1C69E1BC2F22F005E822F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +68,7 @@
 		92C1C6BF1BC307C9005E822F /* AddBlogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddBlogView.xib; path = Xibs/AddBlogView.xib; sourceTree = "<group>"; };
 		92C1C6C11BC3085B005E822F /* AddBlogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBlogView.swift; path = Views/AddBlogView.swift; sourceTree = "<group>"; };
 		92C1C6C31BC308D8005E822F /* AddBlogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBlogController.swift; path = Controllers/AddBlogController.swift; sourceTree = "<group>"; };
+		AC264E256491B69E83DCF51E /* Pods_MiniBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040C2FB41BC3AF6C004BB796 /* GoogleSignIn.framework in Frameworks */,
-				040C2FC21BC3B9C1004BB796 /* GoogleSignIn.bundle in Frameworks */,
-				040C2FBC1BC3B6EC004BB796 /* AddressBook.framework in Frameworks */,
-				040C2FBE1BC3B6F3004BB796 /* StoreKit.framework in Frameworks */,
-				040C2FC41BC3BAC0004BB796 /* SafariServices.framework in Frameworks */,
-				040C2FC01BC3B988004BB796 /* SystemConfiguration.framework in Frameworks */,
+				41877EAB26A9776DDAFF0341 /* Pods_MiniBlog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,21 +98,27 @@
 			isa = PBXGroup;
 			children = (
 				040C2F9F1BC3A0BE004BB796 /* Util.swift */,
+				04F8CC371BC4CD20000D7E49 /* SessionManager.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		135339C2627622FFB188EB8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C28707E2D0D3B3575A66C57 /* Pods-MiniBlog.debug.xcconfig */,
+				47D64ACBB32BEF36F31C90F0 /* Pods-MiniBlog.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		92C1C68D1BC2F22F005E822F = {
 			isa = PBXGroup;
 			children = (
-				040C2FC31BC3BAC0004BB796 /* SafariServices.framework */,
-				040C2FB31BC3AF6C004BB796 /* GoogleSignIn.framework */,
-				040C2FC11BC3B9C1004BB796 /* GoogleSignIn.bundle */,
-				040C2FBB1BC3B6EC004BB796 /* AddressBook.framework */,
-				040C2FBD1BC3B6F3004BB796 /* StoreKit.framework */,
-				040C2FBF1BC3B988004BB796 /* SystemConfiguration.framework */,
 				92C1C6981BC2F22F005E822F /* MiniBlog */,
 				92C1C6971BC2F22F005E822F /* Products */,
+				135339C2627622FFB188EB8B /* Pods */,
+				D5E9059BBACAF88439892EA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,18 +133,19 @@
 		92C1C6981BC2F22F005E822F /* MiniBlog */ = {
 			isa = PBXGroup;
 			children = (
-				040C2F9E1BC3A076004BB796 /* Util */,
-				040C2F951BC39B18004BB796 /* Models */,
-				92C1C6B01BC2F2CE005E822F /* Xibs */,
-				92C1C6AF1BC2F2C7005E822F /* Views */,
-				92C1C6AE1BC2F2C3005E822F /* Controllers */,
 				92C1C6991BC2F22F005E822F /* AppDelegate.swift */,
 				040C2FBA1BC3B4E5004BB796 /* MiniBlog-Bridging-Header.h */,
 				92C1C69D1BC2F22F005E822F /* Main.storyboard */,
 				92C1C6A31BC2F22F005E822F /* Assets.xcassets */,
 				92C1C6A51BC2F22F005E822F /* LaunchScreen.storyboard */,
 				92C1C6A81BC2F22F005E822F /* Info.plist */,
+				04F8CC351BC4B75A000D7E49 /* GoogleService-Info.plist */,
 				92C1C6A01BC2F22F005E822F /* MiniBlog.xcdatamodeld */,
+				92C1C6AE1BC2F2C3005E822F /* Controllers */,
+				92C1C6AF1BC2F2C7005E822F /* Views */,
+				92C1C6B01BC2F2CE005E822F /* Xibs */,
+				040C2F951BC39B18004BB796 /* Models */,
+				040C2F9E1BC3A076004BB796 /* Util */,
 			);
 			path = MiniBlog;
 			sourceTree = "<group>";
@@ -187,6 +185,14 @@
 			name = Xibs;
 			sourceTree = "<group>";
 		};
+		D5E9059BBACAF88439892EA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC264E256491B69E83DCF51E /* Pods_MiniBlog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92C1C6AB1BC2F22F005E822F /* Build configuration list for PBXNativeTarget "MiniBlog" */;
 			buildPhases = (
+				AAECD53940FBEDAF0B623AAF /* Check Pods Manifest.lock */,
 				92C1C6921BC2F22F005E822F /* Sources */,
 				92C1C6931BC2F22F005E822F /* Frameworks */,
 				92C1C6941BC2F22F005E822F /* Resources */,
+				4D18AE0507366113F6FFF911 /* Embed Pods Frameworks */,
+				2993F94504EA9FFC0F3BE340 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C1C6A71BC2F22F005E822F /* LaunchScreen.storyboard in Resources */,
+				04F8CC361BC4B75A000D7E49 /* GoogleService-Info.plist in Resources */,
 				92C1C6B81BC2F3B6005E822F /* HomeView.xib in Resources */,
 				92C1C6C01BC307C9005E822F /* AddBlogView.xib in Resources */,
 				040C2FA21BC3A634004BB796 /* LoginView.xib in Resources */,
@@ -257,6 +267,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2993F94504EA9FFC0F3BE340 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiniBlog/Pods-MiniBlog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D18AE0507366113F6FFF911 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiniBlog/Pods-MiniBlog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAECD53940FBEDAF0B623AAF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		92C1C6921BC2F22F005E822F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -264,6 +322,7 @@
 			files = (
 				92C1C69A1BC2F22F005E822F /* AppDelegate.swift in Sources */,
 				040C2F9B1BC39B6B004BB796 /* Post.swift in Sources */,
+				04F8CC381BC4CD20000D7E49 /* SessionManager.swift in Sources */,
 				92C1C6A21BC2F22F005E822F /* MiniBlog.xcdatamodeld in Sources */,
 				040C2FAA1BC3AB04004BB796 /* LoginView.swift in Sources */,
 				040C2FC61BC3C2BD004BB796 /* UpdateBlogController.swift in Sources */,
@@ -389,9 +448,11 @@
 		};
 		92C1C6AC1BC2F22F005E822F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C28707E2D0D3B3575A66C57 /* Pods-MiniBlog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -407,9 +468,11 @@
 		};
 		92C1C6AD1BC2F22F005E822F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47D64ACBB32BEF36F31C90F0 /* Pods-MiniBlog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

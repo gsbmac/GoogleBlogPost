@@ -63,6 +63,7 @@ class HomeController: BaseController, UITableViewDataSource, UITableViewDelegate
         let addBlogButtonItem = UIBarButtonItem(title: "Blog Now!", style: .Plain, target: self, action: Selector("addBlogPost"))
         
         self.navigationItem.rightBarButtonItem = addBlogButtonItem
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
 
@@ -100,8 +101,8 @@ class HomeController: BaseController, UITableViewDataSource, UITableViewDelegate
             if let destController:UpdateBlogController = segue.destinationViewController as? UpdateBlogController {
                 let blogPost = self.blogPosts?[postIndexPath]
                 destController.postTitle = (blogPost?.title)!
+                destController.postAuthor = (blogPost?.post_author!.name)!
                 destController.postContent = (blogPost?.content)!
-//                self.navigationController?.pushViewController(destController, animated: true)
             }
         }
     }
